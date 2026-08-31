@@ -30,7 +30,7 @@ router.get('/verify', (req, res) => {
   }
 
   // per-site
-  if (row.site && row.site !== requestingSite) {
+  //if (row.site && row.site !== requestingSite) {
     return res.status(401).json({ valid: false, reason: 'wrong_site' });
   }
 
