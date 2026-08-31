@@ -31,7 +31,7 @@ router.post("/issue", requireAdmin, (req, res) => {
   const result = insert.run(tokenHash, user, site, expiresAt)
   const id = result.lastInsertRowid;
 
-  res.status(201).json({ id: id, token: rawToken, user, site, expiresAt });
+  res.status(201).json({ id: id, token: rawToken, user, site, expiresAt, activate_uri: `https://api.justparrot.me/lock/activate?token=${rawToken}` });
 });
 
 module.exports = router;
