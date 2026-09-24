@@ -8,6 +8,7 @@ db.exec(`
   CREATE TABLE IF NOT EXISTS tokens (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     token_hash TEXT UNIQUE NOT NULL,
+    pin_hash TEXT UNIQUE NOT NULL,
     user TEXT NOT NULL,
     site TEXT,
     expires_at INTEGER,
