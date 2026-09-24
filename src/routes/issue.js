@@ -24,7 +24,7 @@ router.post("/issue", requireAdmin, (req, res) => {
   }
 
   const pin = Math.floor(100000 + Math.random() * 900000);
-  const pinHash = hashToken(pinHash)
+  const pinHash = hashToken(pin)
 
   const insert = db.prepare("INSERT INTO tokens (token_hash, user, site, pin_hash, expires_at) VALUES (?, ?, ?, ?, ?)")
 
